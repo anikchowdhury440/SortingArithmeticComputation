@@ -7,7 +7,9 @@ read -p "Enter Third Number: " c
 arith_computation1=$(( $a+$b*$c ))
 arith_computation2=$(( $a*$b+$c ))
 arith_computation3=$(( $c+$a/$b ))
+arith_computation4=$(( $a%$b+$c ))
 
 echo $arith_computation1
 echo $arith_computation2
 echo $arith_computation3
+echo $arith_computation4
