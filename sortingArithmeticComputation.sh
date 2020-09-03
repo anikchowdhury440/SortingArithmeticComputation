@@ -1,15 +1,14 @@
 #!/bin/bash -x
 
+declare -A dictStoreComputation
+
 read -p "Enter First Number: " a
 read -p "Enter Second Number: " b
 read -p "Enter Third Number: " c
 
-arith_computation1=$(( $a+$b*$c ))
-arith_computation2=$(( $a*$b+$c ))
-arith_computation3=$(( $c+$a/$b ))
-arith_computation4=$(( $a%$b+$c ))
+dictStoreComputation["a+b*c"]=$(( $a+$b*$c ))
+dictStoreComputation["a*b+c"]=$(( $a*$b+$c ))
+dictStoreComputation["c+a/b"]=$(( $c+$a/$b ))
+dictStoreComputation["a%b+c"]=$(( $a%$b+$c ))
 
-echo $arith_computation1
-echo $arith_computation2
-echo $arith_computation3
-echo $arith_computation4
+echo ${dictStoreComputation[@]}
