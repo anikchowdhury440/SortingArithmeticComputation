@@ -32,3 +32,18 @@ do
 done
 
 echo "Sorted Computation Result in Descending Order: " ${array[@]}
+
+for (( i=0;i<${#array[@]};i++ ))
+do
+        for (( j=i+1;j<${#array[@]};j++ ))
+        do
+                if [ ${array[$i]} -gt ${array[$j]} ]
+                then
+                        tmp=${array[$i]}
+                        array[$i]=${array[$j]}
+                        array[$j]=$tmp
+                fi
+        done
+done
+
+echo "Sorted Computation Result in Ascending Order: " ${array[@]}
