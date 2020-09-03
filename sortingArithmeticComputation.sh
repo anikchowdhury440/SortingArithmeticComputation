@@ -11,4 +11,11 @@ dictStoreComputation["a*b+c"]=$(( $a*$b+$c ))
 dictStoreComputation["c+a/b"]=$(( $c+$a/$b ))
 dictStoreComputation["a%b+c"]=$(( $a%$b+$c ))
 
-echo ${dictStoreComputation[@]}
+i=0
+for val in ${dictStoreComputation[@]}
+do
+	array[$i]=$val
+	((i++))
+done
+
+echo ${array[@]}
